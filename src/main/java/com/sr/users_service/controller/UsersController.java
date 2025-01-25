@@ -90,7 +90,10 @@ public class UsersController {
                         CustomUserDetails userCredential = (CustomUserDetails) authenticate.getPrincipal();
                         String token = authService.generateToken(authRequest.getUsername());
                         Map<String, String> response = new HashMap<>();
+                        response.put("username",userCredential.getUsername());
+                        response.put("role", userCredential.getAuthorities().iterator().next().getAuthority());
                         response.put("token", token); // Include the token in the response
+                        
                         return ResponseEntity.ok(response);
                     }
 

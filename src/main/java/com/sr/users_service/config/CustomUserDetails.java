@@ -11,7 +11,7 @@ import java.util.List;
 
 public class CustomUserDetails implements UserDetails {
 
-    private Long id;
+    private int id;
     private String username;
     private String password;
     private String role;
@@ -60,7 +60,7 @@ public class CustomUserDetails implements UserDetails {
     }
 
     // Getter for id
-    public Long getId() {
+    public int getId() {
         return id;
     }
 }
